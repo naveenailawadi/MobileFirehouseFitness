@@ -4,4 +4,4 @@ import logging
 logging.basicConfig(stream=sys.stderr)
 sys.path.insert(0, "/var/www/MobileFirehouseFitness/")
 
-from site import app as application
+from website import app as application
