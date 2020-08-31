@@ -12,4 +12,4 @@ def home():
 # add a corona page
 @app.route('/covid')
 def covid():
-    return render_template('covid.html')
+    return render_template('covid.html', title='COVID-19')

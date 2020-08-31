@@ -1,6 +1,23 @@
 {% extends "layout.html" %}
 
 {% block content %}
-
+  <!--CSS styles-->
+  <link href="{{url_for('static', filename='assets/css/covid.css')}}" rel="stylesheet"/>
+  <!-- ======= Hero Section ======= -->
+  <section class="d-flex flex-column justify-content-center" id="hero">
+   <div class="container">
+    <div class="row justify-content-center">
+     <div class="col-xl-8">
+      <h1>
+       COVID-19
+      </h1>
+      <h2>
+        Going above and beyond without compromising your workout
+      </h2>
+     </div>
+    </div>
+   </div>
+  </section>
+  <!-- End Hero -->
 
 {% endblock content %}
