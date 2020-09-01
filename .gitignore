@@ -1,2 +1,5 @@
 # entire template folder
 KnightOne/
+
+# secrets
+secrets.py
