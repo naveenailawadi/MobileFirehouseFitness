@@ -1,249 +1,438 @@
 {% extends "layout.html" %}
 
 {% block content %}
-  <!--CSS styles-->
-  <link href="{{url_for('static', filename='assets/css/home.css')}}" rel="stylesheet"/>
-  <!-- ======= Hero Section ======= -->
-  <section class="d-flex flex-column justify-content-center" id="hero">
-   <div class="container">
+<!--CSS styles-->
+<link href="{{url_for('static', filename='assets/css/home.css')}}" rel="stylesheet" />
+<!-- ======= Hero Section ======= -->
+<section class="d-flex flex-column justify-content-center" id="hero">
+  <div class="container">
     <div class="row justify-content-center">
-     <div class="col-xl-8">
-      <h1>
-       Mobile Firehouse Fitness
-      </h1>
-      <h2>
-        Training reimagined
-      </h2>
-      <a href="https://www.facebook.com/100000464691609/posts/4537038019654976/" class="play-btn mb-4 vbox-item" target="_blank"></a>
-     </div>
+      <div class="col-xl-8">
+        <h1>
+          Mobile Firehouse Fitness
+        </h1>
+        <h2>
+          Training reimagined
+        </h2>
+        <a href="https://www.facebook.com/100000464691609/posts/4537038019654976/" class="play-btn mb-4 vbox-item"
+          target="_blank"></a>
+      </div>
     </div>
-   </div>
-  </section>
-  <!-- End Hero -->
-  <!-- ======= About Us Section ======= -->
-   <section class="about" id="about">
-    <div class="container">
-     <div class="section-title">
+  </div>
+</section>
+<!-- End Hero -->
+<!-- ======= About Us Section ======= -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="section-title">
       <h2>
-       About Me - Oliver James
+        About Me - Oliver James
       </h2>
       <p>
-       I’ve always had a passion for fitness and was actively involved in sports throughout my entire life, including football, basketball and track. I received my certification for personal training through Internal Sports Sciences Association (ISSA) in June 2016.
+        I’ve always had a passion for fitness and was actively involved in sports throughout my entire life, including
+        football, basketball and track. I received my certification for personal training through Internal Sports
+        Sciences Association (ISSA) in June 2016.
       </p>
-     </div>
-     <div class="row content">
+    </div>
+    <div class="row content">
       <div class="col-lg-6">
-       <ul>
-        <li>
-         <i class="ri-check-double-line">
-         </i>
-          Focused on accountability across the board
-        </li>
-        <li>
-         <i class="ri-check-double-line">
-         </i>
-          Working with clients to provide the safest, cleanest environment possible
-        </li>
-        <li>
-         <i class="ri-check-double-line">
-         </i>
+        <ul>
+          <li>
+            <i class="ri-check-double-line">
+            </i>
+            Focused on accountability across the board
+          </li>
+          <li>
+            <i class="ri-check-double-line">
+            </i>
+            Working with clients to provide the safest, cleanest environment possible
+          </li>
+          <li>
+            <i class="ri-check-double-line">
+            </i>
             Doing my best to make personal and group training as easy and accessible as possible
-        </li>
-       </ul>
+          </li>
+        </ul>
       </div>
       <div class="col-lg-6 pt-4 pt-lg-0">
-       <p>
-        Mobile Firehouse Fitness is one of the most convenient, reliable, mobile gym services in the Lehigh Valley.
-        I focus on bringing the gym to you on your time to fit your schedule as best possible.
-       </p>
+        <p>
+          Mobile Firehouse Fitness is one of the most convenient, reliable, mobile gym services in the Lehigh Valley.
+          I focus on bringing the gym to you on your time to fit your schedule as best possible.
+        </p>
       </div>
-     </div>
     </div>
-   </section>
-   <!-- End About Us Section -->
-   <!-- ======= Cta Section ======= -->
-   <section class="cta" id="cta">
-    <div class="container">
-     <div class="row">
+  </div>
+</section>
+<!-- End About Us Section -->
+<!-- ======= Cta Section ======= -->
+<section class="cta" id="cta">
+  <div class="container">
+    <div class="row">
       <div class="col-lg-9 text-center text-lg-left">
-       <h3>
-        No Excuses
-       </h3>
-       <p>
-        No excuses anytime, anywhere. If you want to improve your fitness, it's as easy as picking up the phone.
-       </p>
+        <h3>
+          No Excuses
+        </h3>
+        <p>
+          No excuses anytime, anywhere. If you want to improve your fitness, it's as easy as picking up the phone.
+        </p>
       </div>
       <div class="col-lg-3 cta-btn-container text-center">
-       <a class="cta-btn align-middle" href="tel:+14843796510">
-        Call now!
-       </a>
+        <a class="cta-btn align-middle" href="tel:+14843796510">
+          Call now!
+        </a>
       </div>
-     </div>
     </div>
-   </section>
-   <!-- End Cta Section -->
-   <!-- ======= Services Section ======= -->
-   <section class="services" id="trainingPhilosophy">
-    <div class="container">
-     <div class="section-title">
+  </div>
+</section>
+<!-- End Cta Section -->
+<!-- ======= Review Section ======= -->
+<section class="about" id="reviews">
+  <div class="container">
+    <div class="section-title">
       <h2>
-      Training Philosophy
+        Reviews
+      </h2>
+    </div>
+    <div class="content">
+      <ul class="list-group list-group-horizontal">
+        <li class="list-group-item flex-fill">
+          <h3>Reviews</h3>
+        </li>
+        <li class="list-group-item flex-fill">
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Stars
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="#">5</a>
+              <a class="dropdown-item" href="#">4</a>
+              <a class="dropdown-item" href="#">3</a>
+              <a class="dropdown-item" href="#">2</a>
+              <a class="dropdown-item" href="#">1</a>
+            </div>
+          </div>
+        </li>
+        <li class="list-group-item">
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Short by
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="#">Most recent</a>
+              <a class="dropdown-item" href="#">Best</a>
+              <a class="dropdown-item" href="#">Worst</a>
+            </div>
+          </div>
+        </li>
+        <li class="list-group-item">
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Limit
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="#">5</a>
+              <a class="dropdown-item" href="#">10</a>
+              <a class="dropdown-item" href="#">20</a>
+              <a class="dropdown-item" href="#">50</a>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <ul class="list-group">
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col">
+              <h3>Your name</h3>
+              <p>
+                <span>
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                  the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
+                  and scrambled it to make a type specimen book. It has survived not only five centuries, but also the
+                  leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s
+                  with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
+                  publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                </span>
+              </p>
+            </div>
+            <div class="col">
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star"></span>
+              <span class="fa fa-star"></span>
+              <span class="fa fa-star"></span>
+            </div>
+          </div>
+        </li>
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col">
+              <h3>Your name</h3>
+              <p>
+                <span>
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                  the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
+                  and scrambled it to make a type specimen book.
+                </span>
+              </p>
+            </div>
+            <div class="col">
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star"></span>
+              <span class="fa fa-star"></span>
+              <span class="fa fa-star"></span>
+            </div>
+          </div>
+        </li>
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col">
+              <h3>Your name</h3>
+              <p>
+                <span>
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                  the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
+                  and scrambled it to make a type specimen book. It has survived not only five centuries, but also the
+                  leap into electronic typesetting, remaining essentially unchanged.
+                </span>
+              </p>
+            </div>
+            <div class="col">
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star"></span>
+              <span class="fa fa-star"></span>
+              <span class="fa fa-star"></span>
+            </div>
+          </div>
+        </li>
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col">
+              <h3>Your name</h3>
+              <p>
+                <span>
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                </span>
+              </p>
+            </div>
+            <div class="col">
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star"></span>
+              <span class="fa fa-star"></span>
+              <span class="fa fa-star"></span>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <hr />
+  <div class="container">
+    <div class="second-title">
+      <h2>Review Mobile Firehouse Fitness</h2>
+    </div>
+    <div class="row-content">
+      <form action="">
+        <div class="row">
+          <div class="col p-3">
+            <input type="text" placeholder="Your Name">
+          </div>
+          <div class="col p-3">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col p3">
+            <textarea name="Review" rows="5" cols="100"></textarea>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col p3">
+            <button type="submit" class="btn btn-success">Submit</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+<!-- End Review Section -->
+<!-- ======= Services Section ======= -->
+<section class="services" id="trainingPhilosophy">
+  <div class="container">
+    <div class="section-title">
+      <h2>
+        Training Philosophy
       </h2>
       <p>
-       My philosophy focuses on lifelong learning as I work towards improving the well-being of my clients by empowering them the knowledge, support, skills, guidance and resources to assist and inspire them on their journey to a healthier life. Fitness is here to be enjoyed. Fitness provides us with the ability to enjoy a healthy active lifestyle. The best part about it is that you get to choose your own fitness journey. I am a certified personal trainer that specializes in one-on-one training as well as group classes that are creative and fun with high energy levels.
+        My philosophy focuses on lifelong learning as I work towards improving the well-being of my clients by
+        empowering them the knowledge, support, skills, guidance and resources to assist and inspire them on their
+        journey to a healthier life. Fitness is here to be enjoyed. Fitness provides us with the ability to enjoy a
+        healthy active lifestyle. The best part about it is that you get to choose your own fitness journey. I am a
+        certified personal trainer that specializes in one-on-one training as well as group classes that are creative
+        and fun with high energy levels.
       </p>
-     </div>
     </div>
-   </section>
-   <!-- End Services Section -->
-   <!-- ======= Counts Section ======= -->
-   <section class="counts" id="counts">
-    <div class="container">
-     <div class="text-center title">
+  </div>
+</section>
+<!-- End Services Section -->
+<!-- ======= Counts Section ======= -->
+<section class="counts" id="counts">
+  <div class="container">
+    <div class="text-center title">
       <h3>
-       What we have achieved so far
+        What we have achieved so far
       </h3>
-     </div>
-     <div class="row counters justify-content-center">
-      <div class="col-lg-3 col-6 text-center">
-       <span data-toggle="counter-up">
-        1000
-       </span>
-       <p>
-        Unique Clients Trained
-       </p>
-      </div>
-      <div class="col-lg-3 col-6 text-center">
-       <span data-toggle="counter-up">
-        30
-       </span>
-       <p>
-        Sessions per Week
-       </p>
-      </div>
-      <div class="col-lg-3 col-6 text-center">
-       <span data-toggle="counter-up">
-        100
-       </span>
-       <p>
-        Pieces of Mobilized Equipment
-       </p>
-      </div>
-     </div>
     </div>
-   </section>
-   <!-- End Counts Section -->
-   <!-- ======= Faq Section ======= -->
-   <section class="faq" id="faq">
-    <div class="container-fluid">
-     <div class="row">
+    <div class="row counters justify-content-center">
+      <div class="col-lg-3 col-6 text-center">
+        <span data-toggle="counter-up">
+          1000
+        </span>
+        <p>
+          Unique Clients Trained
+        </p>
+      </div>
+      <div class="col-lg-3 col-6 text-center">
+        <span data-toggle="counter-up">
+          30
+        </span>
+        <p>
+          Sessions per Week
+        </p>
+      </div>
+      <div class="col-lg-3 col-6 text-center">
+        <span data-toggle="counter-up">
+          100
+        </span>
+        <p>
+          Pieces of Mobilized Equipment
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Counts Section -->
+<!-- ======= Faq Section ======= -->
+<section class="faq" id="faq">
+  <div class="container-fluid">
+    <div class="row">
       <div class="col-lg-7 d-flex flex-column justify-content-center align-items-stretch order-2 order-lg-1">
-       <div class="content">
-        <h3>
-         Frequently Asked
-         <strong>
-          Questions
-         </strong>
-        </h3>
-       </div>
-       <div class="accordion-list">
-        <ul>
-         <li>
-          <a class="collapse" data-toggle="collapse" href="#accordion-list-1">
-           What are your prices?
-           <i class="bx bx-chevron-down icon-show">
-           </i>
-           <i class="bx bx-chevron-up icon-close">
-           </i>
-          </a>
-          <div class="collapse show" data-parent=".accordion-list" id="accordion-list-1">
-           <p>
-           Prices vary based on times, days, and traveling distances.
-           </p>
-          </div>
-         </li>
-         <li>
-          <a class="collapsed" data-toggle="collapse" href="#accordion-list-2">
-           How did this get started?
-           <i class="bx bx-chevron-down icon-show">
-           </i>
-           <i class="bx bx-chevron-up icon-close">
-           </i>
-          </a>
-          <div class="collapse" data-parent=".accordion-list" id="accordion-list-2">
-           <p>
-            I used to own a studio gym until late 2019. Upon the rise of the COVID-19, I began to innovate
-            and mobilized my services. This allowed me to create a more comfortable and reliable gym service
-            for my clients.
-           </p>
-          </div>
-         </li>
-         <li>
-          <a class="collapsed" data-toggle="collapse" href="#accordion-list-3">
-           Where are you located?
-           <i class="bx bx-chevron-down icon-show">
-           </i>
-           <i class="bx bx-chevron-up icon-close">
-           </i>
-          </a>
-          <div class="collapse" data-parent=".accordion-list" id="accordion-list-3">
-           <p>
-            I primarily travel within the Lehigh Valley but am available across eastern Pennsylvania.
-            In addition, I hold weekly sessions at outdoor spaces across the valley.
-           </p>
-          </div>
-         </li>
-        </ul>
-       </div>
+        <div class="content">
+          <h3>
+            Frequently Asked
+            <strong>
+              Questions
+            </strong>
+          </h3>
+        </div>
+        <div class="accordion-list">
+          <ul>
+            <li>
+              <a class="collapse" data-toggle="collapse" href="#accordion-list-1">
+                What are your prices?
+                <i class="bx bx-chevron-down icon-show">
+                </i>
+                <i class="bx bx-chevron-up icon-close">
+                </i>
+              </a>
+              <div class="collapse show" data-parent=".accordion-list" id="accordion-list-1">
+                <p>
+                  Prices vary based on times, days, and traveling distances.
+                </p>
+              </div>
+            </li>
+            <li>
+              <a class="collapsed" data-toggle="collapse" href="#accordion-list-2">
+                How did this get started?
+                <i class="bx bx-chevron-down icon-show">
+                </i>
+                <i class="bx bx-chevron-up icon-close">
+                </i>
+              </a>
+              <div class="collapse" data-parent=".accordion-list" id="accordion-list-2">
+                <p>
+                  I used to own a studio gym until late 2019. Upon the rise of the COVID-19, I began to innovate
+                  and mobilized my services. This allowed me to create a more comfortable and reliable gym service
+                  for my clients.
+                </p>
+              </div>
+            </li>
+            <li>
+              <a class="collapsed" data-toggle="collapse" href="#accordion-list-3">
+                Where are you located?
+                <i class="bx bx-chevron-down icon-show">
+                </i>
+                <i class="bx bx-chevron-up icon-close">
+                </i>
+              </a>
+              <div class="collapse" data-parent=".accordion-list" id="accordion-list-3">
+                <p>
+                  I primarily travel within the Lehigh Valley but am available across eastern Pennsylvania.
+                  In addition, I hold weekly sessions at outdoor spaces across the valley.
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
       </div>
-      <div class="col-lg-5 align-items-stretch order-1 order-lg-2 img" style='background-image: url("static/assets/img/faq.jpg");'>
+      <div class="col-lg-5 align-items-stretch order-1 order-lg-2 img"
+        style='background-image: url("static/assets/img/faq.jpg");'>
       </div>
-     </div>
     </div>
-   </section>
-   <!-- End Faq Section -->
-   <!-- ======= Contact Section ======= -->
-   <section class="contact" id="contact">
-    <div class="container">
-     <div class="row mt-5">
+  </div>
+</section>
+<!-- End Faq Section -->
+<!-- ======= Contact Section ======= -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="row mt-5">
       <div class="col-lg-4">
-       <div class="info">
-        <div class="section-title">
-          <h2>
-           Contact
-          </h2>
+        <div class="info">
+          <div class="section-title">
+            <h2>
+              Contact
+            </h2>
+          </div>
+          <i class="ri-mail-line">
+          </i>
+          <h4>
+            Email:
+          </h4>
+          <p>
+            <a href="mailto:">
+              oliver@mobilefirehousefitness.com
+            </a>
+          </p>
+          <div class="phone">
+            <i class="ri-phone-line">
+            </i>
+            <h4>
+              Call:
+            </h4>
+            <p>
+              <a href="tel:+14843796510">
+                +1 (484) 379-6510
+              </a>
+            </p>
+          </div>
         </div>
-       <i class="ri-mail-line">
-       </i>
-       <h4>
-        Email:
-       </h4>
-       <p>
-         <a href="mailto:">
-          oliver@mobilefirehousefitness.com
-         </a>
-       </p>
-        <div class="phone">
-         <i class="ri-phone-line">
-         </i>
-         <h4>
-          Call:
-         </h4>
-         <p>
-           <a href="tel:+14843796510">
-          +1 (484) 379-6510
-         </a>
-         </p>
-        </div>
-       </div>
       </div>
       <div class="col-lg-4">
         <p style="margin-top: 30%">
-         Feel free to call or text me at any time. I would be happy to chat about your unique fitness journey.
+          Feel free to call or text me at any time. I would be happy to chat about your unique fitness journey.
         </p>
       </div>
-     </div>
     </div>
-   </section>
-   <!-- End Contact Section -->
+  </div>
+</section>
+<!-- End Contact Section -->
 {% endblock content %}
