@@ -11,3 +11,147 @@ hr {
   border: 0;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
+
+/* Owl Carousel */
+/* Carousel */
+/*.owl-theme .owl-controls {
+  margin-top: 0;
+}*/
+
+.owl-item .image-testimonial-small {
+  margin: 0 auto 20px;
+  width: 10%!important;
+}
+
+.owl-carousel .owl-nav div {
+  filter: Alpha(Opacity=50);
+  opacity: 0.5;
+  transition: all 0.20s linear 0s;
+  -o-transition: all 0.20s linear 0s;
+  -ms-transition: all 0.20s linear 0s;
+  -moz-transition: all 0.20s linear 0s;
+  -webkit-transition: all 0.20s linear 0s;
+}
+.owl-carousel .owl-nav div:hover {
+  filter: Alpha(Opacity=100);
+  opacity: 1;
+}
+.owl-carousel .owl-dots {
+  text-align: center;
+}
+.owl-carousel .owl-dot {
+  display: inline-block;
+}
+.owl-carousel .owl-dot span {
+  background: #7697a2 none repeat scroll 0 0;
+  border-radius: 0;
+  display: block;
+  height: 1px;
+  margin: 0 1px;
+  width: 30px;
+  filter: Alpha(Opacity=50);
+  opacity: 0.5;
+  transition: all 0.20s linear 0s;
+  -o-transition: all 0.20s linear 0s;
+  -ms-transition: all 0.20s linear 0s;
+  -moz-transition: all 0.20s linear 0s;
+  -webkit-transition: all 0.20s linear 0s;
+}
+.owl-carousel .owl-dot.active span {
+  filter: Alpha(Opacity=100);
+  opacity: 1;
+}
+.owl-carousel .owl-nav div {
+  background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+  color: #7697a2!important;
+  border: 1px solid #7697a2;
+  border-radius: 0;
+  font-family: sli;
+  height: 40px;
+  line-height: 40px;
+  margin-top: -20px;
+  padding: 0;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  width: 40px;
+}
+.carousel-bottom-arrows.owl-carousel .owl-nav div {
+  bottom: 0;
+  top: auto;
+}
+.owl-carousel .owl-nav .owl-prev {
+  left: 0;
+}
+.owl-carousel .owl-nav .owl-next {
+  right: 0;
+}
+.carousel-wide-arrows.owl-carousel .owl-nav .owl-prev {
+  left: -60px;
+}
+.carousel-wide-arrows.owl-carousel .owl-nav .owl-next {
+  right: -60px;
+}
+.carousel-nav-white.owl-carousel .owl-dots span {
+  background: #fff none repeat scroll 0 0;
+}
+.carousel-nav-white.owl-carousel .owl-nav div {
+  color: #fff!important;
+  border: 1px solid #fff;
+}
+.carousel-main .carousel-content {
+  bottom: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+}
+.owl-dots {
+  margin-top: 0.625rem;
+}
+.carousel-main .owl-dots {
+  bottom: 0;
+  padding: 1.25rem 0;
+  position: absolute;
+  width: 100%;
+}
+.carousel-blocks {
+  padding: 0 3rem;
+}
+.carousel-blocks .owl-item {
+  padding: 0 0.625rem;
+}
+.carousel-hide-arrows .owl-nav, .carousel-hide-pagination .owl-pagination {
+display:none;
+}
+.carousel-3-blocks {
+  padding: 0 3rem;
+}
+.carousel-3-blocks .owl-item {
+  padding: 0 0.625rem;
+}
+
+.text-size-20, .text-l-size-20 {
+  font-size: 20px !important;
+  line-height: 1.4;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.text-size-16, .text-l-size-16 {
+  font-size: 16px !important;
+  line-height: 1.4;
+}
+
+
+/* Testimonials */
+.testimonial-image {
+  display: block;
+  width: 100%;
+  margin-top: 20%;
+}
