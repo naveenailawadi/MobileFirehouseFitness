@@ -4,3 +4,10 @@
 #hero {
   background: url("../img/covid/hero-bg.jpg") top center;
 }
+
+.icon-box {
+    margin-top: auto;
+    width: 90%;
+    padding-top: 10%;
+    padding-bottom: 10%;
+}

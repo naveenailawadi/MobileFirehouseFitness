@@ -3,3 +3,6 @@ KnightOne/
 
 # secrets
 secrets.py
+
+# dotfiles
+.DS_Store
