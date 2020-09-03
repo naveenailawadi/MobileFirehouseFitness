@@ -285,36 +285,36 @@
               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Stars
             </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="#">
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="starDropdown">
+              <a class="dropdown-item" val="5">
                 <span class="fa fa-star checked"></span>
                 <span class="fa fa-star checked"></span>
                 <span class="fa fa-star checked"></span>
                 <span class="fa fa-star checked"></span>
                 <span class="fa fa-star checked"></span>
               </a>
-              <a class="dropdown-item" href="#">
+              <a class="dropdown-item" val="4">
                 <span class="fa fa-star checked"></span>
                 <span class="fa fa-star checked"></span>
                 <span class="fa fa-star checked"></span>
                 <span class="fa fa-star checked"></span>
                 <span class="fa fa-star"></span>
               </a>
-              <a class="dropdown-item" href="#">
+              <a class="dropdown-item" val="3">
                 <span class="fa fa-star checked"></span>
                 <span class="fa fa-star checked"></span>
                 <span class="fa fa-star checked"></span>
                 <span class="fa fa-star"></span>
                 <span class="fa fa-star"></span>
               </a>
-              <a class="dropdown-item" href="#">
+              <a class="dropdown-item" val="2">
                 <span class="fa fa-star checked"></span>
                 <span class="fa fa-star checked"></span>
                 <span class="fa fa-star"></span>
                 <span class="fa fa-star"></span>
                 <span class="fa fa-star"></span>
               </a>
-              <a class="dropdown-item" href="#">
+              <a class="dropdown-item" val="1">
                 <span class="fa fa-star checked"></span>
                 <span class="fa fa-star"></span>
                 <span class="fa fa-star"></span>
@@ -330,7 +330,7 @@
               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Sort by
             </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="sortingDropdown">
               <a class="dropdown-item" href="#">Most recent</a>
               <a class="dropdown-item" href="#">Best</a>
               <a class="dropdown-item" href="#">Worst</a>
@@ -343,7 +343,7 @@
               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Limit
             </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="limitDropdown">
               <a class="dropdown-item" href="#">5</a>
               <a class="dropdown-item" href="#">10</a>
               <a class="dropdown-item" href="#">20</a>
@@ -354,7 +354,7 @@
       </div>
     </div>
     <div class="content">
-      <ul class="list-group">
+      <ul class="list-group" id="pastReviewSection">
         <li class="list-group-item">
           <div class="row">
             <div class="col-6">
@@ -380,51 +380,26 @@
             <div class="col-2">03/09/2020</div>
           </div>
         </li>
+        {% raw %}
+        <template id="reviewTemplate">
+
+        </template>
         <li class="list-group-item">
           <div class="row">
             <div class="col-6">
-              <h3>Your name</h3>
+              <h3>{{{name}}}</h3>
               <p>
                 <span>
-                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                  the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
-                  and scrambled it to make a type specimen book.
+                  {{{reviewText}}}
                 </span>
               </p>
             </div>
-            <div class="col-4">
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star"></span>
-              <span class="fa fa-star"></span>
-              <span class="fa fa-star"></span>
-            </div>
-            <div class="col-2">03/09/2020</div>
+            <!--Make a star column-->
+            <div class="col-4" id="starSection"></div>
+            <div class="col-2">{{{date}}}</div>
           </div>
         </li>
-        <li class="list-group-item">
-          <div class="row">
-            <div class="col-6">
-              <h3>Your name</h3>
-              <p>
-                <span>
-                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                  the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
-                  and scrambled it to make a type specimen book. It has survived not only five centuries, but also the
-                  leap into electronic typesetting, remaining essentially unchanged.
-                </span>
-              </p>
-            </div>
-            <div class="col-4">
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star"></span>
-              <span class="fa fa-star"></span>
-              <span class="fa fa-star"></span>
-            </div>
-            <div class="col-2">03/09/2020</div>
-          </div>
-        </li>
+        {% endraw %}
         <li class="list-group-item">
           <div class="row">
             <div class="col">
@@ -433,22 +408,22 @@
           </div>
           <div class="row">
             <div class="col">
-              <form action="">
+              <form action="POST">
                 <div class="row">
                   <div class="col p-3">
-                    <input type="text" placeholder="Your Name">
+                    <input type="text" placeholder="Your Name" id="nameInput">
                   </div>
-                  <div class="col p-3">
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
+                  <div class="col p-3" id="starInput">
+                    <span class="fa fa-star checked" val="1"></span>
+                    <span class="fa fa-star" val="2"></span>
+                    <span class="fa fa-star" val="3"></span>
+                    <span class="fa fa-star" val="4"></span>
+                    <span class="fa fa-star" val="5"></span>
                   </div>
                 </div>
-                <div class="row">
+                <div class="row" >
                   <div class="col p3">
-                    <textarea name="Review" rows="5" cols="100"></textarea>
+                    <textarea name="Review" rows="5" cols="100" id="reviewInput"></textarea>
                   </div>
                 </div>
                 <div class="row">

@@ -4,6 +4,9 @@ KnightOne/
 # secrets
 secrets.py
 
-# dotfiles
+# dotfiles and binaries
 .DS_Store
+__pycache__/
+
+# virtual environments
 venv/
