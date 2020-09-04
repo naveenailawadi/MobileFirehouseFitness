@@ -284,14 +284,6 @@
               <option class="dropdown-item" selected="select">Most recent</option>
               <option class="dropdown-item">Best</option>
               <option class="dropdown-item">Worst</option>
-          </select>
-        </div>
-        <div class="col">
-            <select class="dropdown btn get-started-btn dropdown-toggle" aria-labelledby="dropdownMenuButton" id="limitDropdown">
-              <option class="dropdown-item" href="#">5</option>
-              <option class="dropdown-item" href="#">10</option>
-              <option class="dropdown-item" href="#">20</option>
-              <option class="dropdown-item" href="#">50</option>
             </select>
         </div>
       </div>
@@ -360,15 +352,20 @@
                   <div class="col p-3">
                     <input type="text" placeholder="Your Name" id="nameInput">
                   </div>
-                  <div class="col p-3" id="starInput">
-                    <span class="fa fa-star checked" val="1"></span>
-                    <span class="fa fa-star checked" val="2"></span>
-                    <span class="fa fa-star checked" val="3"></span>
-                    <span class="fa fa-star checked" val="4"></span>
-                    <span class="fa fa-star checked" val="5"></span>
+                  <div class="col p-3 starrating" id="starInput">
+                    <input type="radio" id="star5" name="rating" value="5">
+                    <label for="star5" class="fa fa-star"></label>
+                    <input type="radio" id="star4" name="rating" value="4">
+                    <label for="star4" class="fa fa-star"></label>
+                    <input type="radio" id="star3" name="rating" value="3">
+                    <label for="star3" class="fa fa-star"></label>
+                    <input type="radio" id="star2" name="rating" value="2">
+                    <label for="star2" class="fa fa-star"></label>
+                    <input type="radio" id="star1" name="rating" value="1">
+                    <label for="star1" class="fa fa-star"></label>
                   </div>
                 </div>
-                <div class="row" >
+                <div class="row">
                   <div class="col p3">
                     <textarea name="Review" placeholder="Review" rows="5" cols="100" id="reviewInput"></textarea>
                   </div>
