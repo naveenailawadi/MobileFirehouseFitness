@@ -347,11 +347,12 @@
           <div class="row">
             <div class="col">
               <h3>Review Mobile Firehouse Fitness</h3>
+              <div id="formErrors"></div>
             </div>
           </div>
           <div class="row">
             <div class="col">
-              <form action="POST">
+              <form action="POST" id="reviewForm">
                 <div class="row">
                   <div class="col p-3">
                     <input type="text" placeholder="Your Name" id="nameInput">
@@ -372,6 +373,7 @@
                 <div class="row">
                   <div class="col p3">
                     <button type="submit" class="btn-learn-more">Submit</button>
+                    <div id="submitField"></div>
                   </div>
                 </div>
               </form>
