@@ -1,3 +1,3 @@
 from website import app
 
-app.run(debug=True, port='6969')
+app.run(debug=True)
