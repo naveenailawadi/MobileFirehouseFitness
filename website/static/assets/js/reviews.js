@@ -1,3 +1,80 @@
+const MIN_STARS = 1;
+const MAX_STARS = 5;
+
+// create a function to add reviews based on the dropdown menus
+function addReviews() {
+  // get the value of the dropdowns
+  var sortingDropdown = $('#sortingDropdown');
+  var limitDropdown = $('#limitDropdown');
+  var pastReviewSection = $('#pastReviewSection');
+
+  // get the review template
+  var reviewTemplate = $('#reviewTemplate').html();
+
+  // get the correct number of reviews from the API
+  $.ajax({
+    type: 'POST',
+      url: "https://api.mobilefirehousefitness.com/ReviewDisplay",
+      data: JSON.stringify(
+        {
+            min_stars: 1,
+            sort_by: sortingDropdown.val(),
+            limit: limitDropdown.val()
+
+        }),
+      success: function (response) {
+        // empty the old reviews
+        pastReviewSection.children(":not(#newReview)").remove()
+
+        // add each review
+        newReviews = response['reviews'];
+        for (var i in newReviews) {
+          review = newReviews[i];
+          review['date'] = 'date';
+          reviewElement = $(Mustache.render(reviewTemplate, review));
+
+
+          // add stars to the review element
+          var starSection = reviewElement.find('#starSection');
+          var count = 0
+
+          while (count < review.stars) {
+            console.log('Adding star')
+            $('<span class="fa fa-star checked"></span>').insertBefore(reviewElement.find('#dateSection'));
+            count += 1
+          }
+
+          // add non stars
+          while (count < MAX_STARS) {
+            $('<span class="fa fa-star"></span>').insertBefore(reviewElement.find('#dateSection'));
+            count += 1;
+          }
+
+
+          reviewElement.insertBefore($('#newReview'));
+          console.log(Mustache.render(reviewTemplate, review));
+          console.log(review);
+        }
+
+      },
+      error: function () {
+        alert('Error in loading reviews. Try again later.');
+      }
+  });
+
+
+  return false;
+}
+
+// load the
+
+
+// create an auto reload on changes of the dropdowns
+
+
+
+
+
 // create a function for throwing form errors
 function throwFormError(message)
 {
@@ -8,6 +85,8 @@ function throwFormError(message)
   formErrors.append(new_error);
 }
 
+
+// handle submit form submissions
 $('#reviewForm').submit(function (e) {
     e.preventDefault();
 
@@ -30,13 +109,12 @@ $('#reviewForm').submit(function (e) {
       // send the review via ajax
       $.ajax({
               type: 'POST',
-              // THIS WILL NEED TO BE CHANGED!!!
-              url: "https://mobilefirehousefitness.com/ReviewManagement",
+              url: "https://api.mobilefirehousefitness.com/ReviewManagement",
               data: JSON.stringify(
                 {
                     name: nameInput.val(),
                     review_text: reviewInput.val(),
-                    stars: starInput.val();
+                    stars: starInput.val()
                 }),
               success: function (response) {
                 // empty the errors
@@ -46,7 +124,11 @@ $('#reviewForm').submit(function (e) {
                 $('form').find("input[type=text], textarea").val("");
 
                 // submit a success message
-                $('#submitField').append('<p>Your submission has been recorded. We will contact you soon!</p>');
+                $('#submitField').append('<p>Thank you for your review!</p>');
+
+                // reload the reviews
+                addReviews();
+
               },
               error: function () {
                 alert('Error in submitting your review. Try again later.');
@@ -54,4 +136,9 @@ $('#reviewForm').submit(function (e) {
         });
     }
 
+});
+
+// perform some functions on document load
+$(document).ready(function () {
+  addReviews();
 });

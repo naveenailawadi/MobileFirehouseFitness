@@ -331,19 +331,22 @@
                 <h3>{{{name}}}</h3>
                 <p>
                   <span>
-                    {{{reviewText}}}
+                    {{{review_text}}}
                   </span>
                 </p>
               </div>
               <!--Make a star column-->
-              <div class="col-4" id="starSection"></div>
-              <div class="col-2">{{{date}}}</div>
+              <div class="col-4">
+                <div id="starSection">
+                  <p id="dateSection">{{{date}}}</p>
+                </div>
+              </div>
             </div>
           </li>
         </template>
 
         {% endraw %}
-        <li class="list-group-item">
+        <li class="list-group-item" id="newReview">
           <div class="row">
             <div class="col">
               <h3>Review Mobile Firehouse Fitness</h3>
@@ -367,7 +370,7 @@
                 </div>
                 <div class="row" >
                   <div class="col p3">
-                    <textarea name="Review" rows="5" cols="100" id="reviewInput"></textarea>
+                    <textarea name="Review" placeholder="Review" rows="5" cols="100" id="reviewInput"></textarea>
                   </div>
                 </div>
                 <div class="row">
@@ -429,4 +432,5 @@
   </div>
 </section>
 <!-- End Contact Section -->
+<script src="{{url_for('static', filename='assets/js/reviews.js')}}"></script>
 {% endblock content %}
