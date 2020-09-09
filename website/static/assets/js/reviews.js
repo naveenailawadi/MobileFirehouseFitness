@@ -124,42 +124,38 @@ $('#reviewForm').submit(function (e) {
       throwFormError('Please write a review.')
     }
     else {
-      console.log($('#reviewForm'));
+      // send the review via ajax
+      $.ajax({
+              type: 'POST',
+              url: "https://api.mobilefirehousefitness.com/ReviewManagement",
+              data: JSON.stringify(
+                {
+                    name: nameInput.val(),
+                    review_text: reviewInput.val(),
+                    stars: starInput.val()
+                }),
+              success: function (response) {
+                // empty the errors
+                $('#formErrors').empty();
+
+                // empty the form
+                $('form').find("input[type=text], textarea").val("");
+
+                // submit a success message
+                $('#submitField').append('<p>Thank you for your review!</p>');
+
+                // reload the reviews
+                addReviews();
+
+              },
+              error: function () {
+                alert('Error in submitting your review. Try again later.');
+              }
+        });
     }
-    // else {
-    //   // send the review via ajax
-    //   $.ajax({
-    //           type: 'POST',
-    //           url: "https://api.mobilefirehousefitness.com/ReviewManagement",
-    //           data: JSON.stringify(
-    //             {
-    //                 name: nameInput.val(),
-    //                 review_text: reviewInput.val(),
-    //                 stars: starInput.val()
-    //             }),
-    //           success: function (response) {
-    //             // empty the errors
-    //             $('#formErrors').empty();
-
-    //             // empty the form
-    //             $('form').find("input[type=text], textarea").val("");
-
-    //             // submit a success message
-    //             $('#submitField').append('<p>Thank you for your review!</p>');
-
-    //             // reload the reviews
-    //             addReviews();
-
-    //           },
-    //           error: function () {
-    //             alert('Error in submitting your review. Try again later.');
-    //           }
-    //     });
-    // }
-
 });
 
 // perform some functions on document load
 $(document).ready(function () {
-  // addReviews();
+  addReviews();
 });
