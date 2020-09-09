@@ -353,16 +353,16 @@
                     <input type="text" placeholder="Your Name" id="nameInput">
                   </div>
                   <div class="col p-3 starrating" id="starInput">
-                    <input type="radio" id="star5" name="rating" value="5">
-                    <label for="star5" class="fa fa-star"></label>
-                    <input type="radio" id="star4" name="rating" value="4">
-                    <label for="star4" class="fa fa-star"></label>
-                    <input type="radio" id="star3" name="rating" value="3">
-                    <label for="star3" class="fa fa-star"></label>
-                    <input type="radio" id="star2" name="rating" value="2">
-                    <label for="star2" class="fa fa-star"></label>
                     <input type="radio" id="star1" name="rating" value="1">
-                    <label for="star1" class="fa fa-star"></label>
+                    <label class="fa fa-star" onmouseover="toggleChecked(this)" for="star1" onclick="toggleRating(this)"></label>
+                    <input type="radio" id="star2" name="rating" value="2">
+                    <label class="fa fa-star" onmouseover="toggleChecked(this)" for="star2" onclick="toggleRating(this)"></label>
+                    <input type="radio" id="star3" name="rating" value="3">
+                    <label class="fa fa-star" onmouseover="toggleChecked(this)"></label>
+                    <input type="radio" id="star4" name="rating" value="4">
+                    <label class="fa fa-star" onmouseover="toggleChecked(this)"></label>
+                    <input type="radio" id="star5" name="rating" value="5">
+                    <label class="fa fa-star" onmouseover="toggleChecked(this)"></label>
                   </div>
                 </div>
                 <div class="row">

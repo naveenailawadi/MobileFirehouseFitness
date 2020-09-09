@@ -1,6 +1,18 @@
 const MIN_STARS = 1;
 const MAX_STARS = 5;
 
+function toggleChecked(el) {
+  if(el.classList.contains('checked')) {
+    el.classList.remove('checked');
+  } else {
+    el.classList.add('checked');
+  }
+};
+function toggleRating(el) {
+  const inpId = el.getAttribute('for');
+  const starInp = document.getElementById(inpId);
+  starInp.setAttribute('checked', true);
+};
 // create a function to add reviews based on the dropdown menus
 function addReviews() {
   // get the value of the dropdowns
@@ -88,12 +100,18 @@ function throwFormError(message)
 
 // handle submit form submissions
 $('#reviewForm').submit(function (e) {
+    console.log("submit review form");
     e.preventDefault();
+    const form = document.querySelector("form");
+    var data = new FormData(form);
+    for (const entry of data) {
+      console.log(entry);
+    };
+
 
     // load all the data
     var nameInput = $('#nameInput');
     var reviewInput = $('#reviewInput');
-    var starInput = $('#starInput');
 
     // get the errors to be able to empty them later
     var formErrors = $('#formErrors');
@@ -106,39 +124,42 @@ $('#reviewForm').submit(function (e) {
       throwFormError('Please write a review.')
     }
     else {
-      // send the review via ajax
-      $.ajax({
-              type: 'POST',
-              url: "https://api.mobilefirehousefitness.com/ReviewManagement",
-              data: JSON.stringify(
-                {
-                    name: nameInput.val(),
-                    review_text: reviewInput.val(),
-                    stars: starInput.val()
-                }),
-              success: function (response) {
-                // empty the errors
-                $('#formErrors').empty();
-
-                // empty the form
-                $('form').find("input[type=text], textarea").val("");
-
-                // submit a success message
-                $('#submitField').append('<p>Thank you for your review!</p>');
-
-                // reload the reviews
-                addReviews();
-
-              },
-              error: function () {
-                alert('Error in submitting your review. Try again later.');
-              }
-        });
+      console.log($('#reviewForm'));
     }
+    // else {
+    //   // send the review via ajax
+    //   $.ajax({
+    //           type: 'POST',
+    //           url: "https://api.mobilefirehousefitness.com/ReviewManagement",
+    //           data: JSON.stringify(
+    //             {
+    //                 name: nameInput.val(),
+    //                 review_text: reviewInput.val(),
+    //                 stars: starInput.val()
+    //             }),
+    //           success: function (response) {
+    //             // empty the errors
+    //             $('#formErrors').empty();
+
+    //             // empty the form
+    //             $('form').find("input[type=text], textarea").val("");
+
+    //             // submit a success message
+    //             $('#submitField').append('<p>Thank you for your review!</p>');
+
+    //             // reload the reviews
+    //             addReviews();
+
+    //           },
+    //           error: function () {
+    //             alert('Error in submitting your review. Try again later.');
+    //           }
+    //     });
+    // }
 
 });
 
 // perform some functions on document load
 $(document).ready(function () {
-  addReviews();
+  // addReviews();
 });
