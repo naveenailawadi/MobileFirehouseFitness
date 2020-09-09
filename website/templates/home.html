@@ -292,8 +292,20 @@
       <ul class="list-group" id="pastReviewSection">
         <li class="list-group-item">
           <div class="row">
-            <div class="col-6">
+            <div class="col-9 col-sm-9 col-md-9 col-lg-6 col-xl-6">
               <h3>Your name</h3>
+            </div>
+            <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-4">
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star"></span>
+              <span class="fa fa-star"></span>
+              <span class="fa fa-star"></span>
+            </div>
+            <div class="col-2">03/09/2020</div>
+          </div>
+          <div class="row">
+            <div class="col-9 col-sm-9 col-md-9 col-lg-6 col-xl-6">
               <p>
                 <span>
                   Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
@@ -305,14 +317,6 @@
                 </span>
               </p>
             </div>
-            <div class="col-4">
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star"></span>
-              <span class="fa fa-star"></span>
-              <span class="fa fa-star"></span>
-            </div>
-            <div class="col-2">03/09/2020</div>
           </div>
         </li>
         {% raw %}
@@ -349,10 +353,10 @@
             <div class="col">
               <form action="POST" id="reviewForm">
                 <div class="row">
-                  <div class="col p-3">
+                  <div class="col-9 col-sm-9 col-md-4 col-lg-4 col-xl-4 p-3">
                     <input type="text" placeholder="Your Name" id="nameInput">
                   </div>
-                  <div class="col p-3 starrating" id="starInput">
+                  <div class="col-9 col-sm-9 col-md-4 col-lg-4 col-xl-4 p-3 starrating" id="starInput">
                     <input type="radio" id="star1" name="rating" value="1">
                     <label class="fa fa-star" onmouseover="toggleChecked(this)" for="star1" onclick="toggleRating(this)"></label>
                     <input type="radio" id="star2" name="rating" value="2">
@@ -366,8 +370,8 @@
                   </div>
                 </div>
                 <div class="row">
-                  <div class="col p3">
-                    <textarea name="Review" placeholder="Review" rows="5" cols="100" id="reviewInput"></textarea>
+                  <div class="col-6 col-sm-6 col-md-9 col-lg-9 col-xl-9 p3">
+                    <textarea name="Review" placeholder="Review" rows="5" style="min-width: 100%" id="reviewInput"></textarea>
                   </div>
                 </div>
                 <div class="row">
