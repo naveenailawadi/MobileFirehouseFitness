@@ -8,11 +8,15 @@ function toggleChecked(el) {
     el.classList.add('checked');
   }
 };
+
+
 function toggleRating(el) {
   const inpId = el.getAttribute('for');
   const starInp = document.getElementById(inpId);
   starInp.setAttribute('checked', true);
 };
+
+
 // create a function to add reviews based on the dropdown menus
 function addReviews() {
   // get the value of the dropdowns
@@ -77,15 +81,6 @@ function addReviews() {
 
   return false;
 }
-
-// load the
-
-
-// create an auto reload on changes of the dropdowns
-
-
-
-
 
 // create a function for throwing form errors
 function throwFormError(message)
