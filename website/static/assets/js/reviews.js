@@ -13,7 +13,22 @@ function toggleChecked(el) {
 function toggleRating(el) {
   const inpId = el.getAttribute('for');
   const starInp = document.getElementById(inpId);
-  starInp.setAttribute('checked', true);
+  const rating = parseInt(inpId.replace('star', ''));
+  const isChecked = (starInp.getAttribute('checked') === 'true');
+  if (isChecked) {
+    // if already checked reset rating
+    const stars = document.querySelectorAll('#starInput label')
+    stars.forEach(star => {
+      star.classList.remove('checked');
+    });
+    starInp.setAttribute('checked', false);
+  } else {
+    starInp.setAttribute('checked', true);
+    for (i=1; i<=rating; i++) {
+      const star = document.querySelectorAll(`label[for='star${i}']`)[0];
+      star.classList.add('checked');
+    }
+  }
 };
 
 
@@ -149,8 +164,12 @@ $('#reviewForm').submit(function (e) {
         });
     }
 });
-
+function rate5() {
+  const star5 = document.querySelectorAll('#starInput label[for="star5"]')[0];
+  toggleRating(star5)
+}
 // perform some functions on document load
 $(document).ready(function () {
   addReviews();
+  rate5();
 });
