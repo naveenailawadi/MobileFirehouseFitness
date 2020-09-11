@@ -1,14 +1,13 @@
 const MIN_STARS = 1;
 const MAX_STARS = 5;
 
-function toggleChecked(el) {
-  if(el.classList.contains('checked')) {
-    el.classList.remove('checked');
-  } else {
-    el.classList.add('checked');
-  }
-};
-
+// function toggleChecked(el) {
+//   if(el.classList.contains('checked')) {
+//     el.classList.remove('checked');
+//   } else {
+//     el.classList.add('checked');
+//   }
+// };
 
 function toggleRating(el) {
   const inpId = el.getAttribute('for');
