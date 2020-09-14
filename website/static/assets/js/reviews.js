@@ -60,7 +60,6 @@ function addReviews() {
         for (var i in newReviews) {
           review = newReviews[i];
           review['date'] = 'date';
-          console.log(review);
           reviewElement = $(Mustache.render(reviewTemplate, review));
 
 
