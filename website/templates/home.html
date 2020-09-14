@@ -297,6 +297,28 @@
       </div>
     </div>
     <div class="content">
+      {% raw %}
+        <template id="reviewTemplate">
+          <li class="list-group-item">
+            <div class="row">
+              <div class="col-6">
+                <h3>{{{name}}}</h3>
+                <p>
+                  <span>
+                    {{{review_text}}}
+                  </span>
+                </p>
+              </div>
+              <!--Make a star column-->
+              <div class="col-4">
+                <div id="starSection">
+                  <p id="dateSection">{{{date}}}</p>
+                </div>
+              </div>
+            </div>
+          </li>
+        </template>
+        {% endraw %}
       <ul class="list-group" id="pastReviewSection">
         <li class="list-group-item">
           <div class="row">
@@ -327,29 +349,6 @@
             </div>
           </div>
         </li>
-        {% raw %}
-        <template id="reviewTemplate">
-          <li class="list-group-item">
-            <div class="row">
-              <div class="col-6">
-                <h3>{{{name}}}</h3>
-                <p>
-                  <span>
-                    {{{review_text}}}
-                  </span>
-                </p>
-              </div>
-              <!--Make a star column-->
-              <div class="col-4">
-                <div id="starSection">
-                  <p id="dateSection">{{{date}}}</p>
-                </div>
-              </div>
-            </div>
-          </li>
-        </template>
-
-        {% endraw %}
         <li class="list-group-item" id="newReview">
           <div class="row">
             <div class="col">

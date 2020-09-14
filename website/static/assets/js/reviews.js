@@ -14,20 +14,19 @@ function toggleRating(el) {
   const starInp = document.getElementById(inpId);
   const rating = parseInt(inpId.replace('star', ''));
   const isChecked = (starInp.getAttribute('checked') === 'true');
-  if (isChecked) {
-    // if already checked reset rating
-    const stars = document.querySelectorAll('#starInput label')
-    stars.forEach(star => {
+
+  // if already checked reset rating
+  const stars = document.querySelectorAll('#starInput label');
+  stars.forEach(star => {
+    if (Number(star.getAttribute('value')) > Number(el.getAttribute('value'))) {
       star.classList.remove('checked');
-    });
-    starInp.setAttribute('checked', false);
-  } else {
-    starInp.setAttribute('checked', true);
-    for (i=1; i<=rating; i++) {
-      const star = document.querySelectorAll(`label[for='star${i}']`)[0];
+      starInp.setAttribute('checked', false);
+    }
+    else {
+      star.setAttribute('checked', true);
       star.classList.add('checked');
     }
-  }
+  });
 };
 
 
@@ -54,24 +53,24 @@ function addReviews() {
         }),
       success: function (response) {
         // empty the old reviews
-        pastReviewSection.children(":not(#newReview)").remove()
+        pastReviewSection.children(":not(#newReview)").remove();
 
         // add each review
         newReviews = response['reviews'];
         for (var i in newReviews) {
           review = newReviews[i];
           review['date'] = 'date';
+          console.log(review);
           reviewElement = $(Mustache.render(reviewTemplate, review));
 
 
           // add stars to the review element
           var starSection = reviewElement.find('#starSection');
-          var count = 0
+          var count = 0;
 
           while (count < review.stars) {
-            console.log('Adding star')
             $('<span class="fa fa-star checked"></span>').insertBefore(reviewElement.find('#dateSection'));
-            count += 1
+            count += 1;
           }
 
           // add non stars
@@ -82,8 +81,6 @@ function addReviews() {
 
 
           reviewElement.insertBefore($('#newReview'));
-          console.log(Mustache.render(reviewTemplate, review));
-          console.log(review);
         }
 
       },
@@ -102,21 +99,16 @@ function throwFormError(message)
   // get the error field
   var formErrors = $('#formErrors');
   formErrors.empty();
-  new_error = '<p class="submission-error">' + message + '</p>'
+  new_error = '<p class="submission-error">' + message + '</p>';
   formErrors.append(new_error);
 }
 
 
 // handle submit form submissions
 $('#reviewForm').submit(function (e) {
-    console.log("submit review form");
     e.preventDefault();
     const form = document.querySelector("form");
     var data = new FormData(form);
-    for (const entry of data) {
-      console.log(entry);
-    };
-
 
     // load all the data
     var nameInput = $('#nameInput');
@@ -130,7 +122,7 @@ $('#reviewForm').submit(function (e) {
       throwFormError('Please include your name.');
     }
     else if (reviewInput.val().length == 0) {
-      throwFormError('Please write a review.')
+      throwFormError('Please write a review.');
     }
     else {
       // send the review via ajax
@@ -141,7 +133,7 @@ $('#reviewForm').submit(function (e) {
                 {
                     name: nameInput.val(),
                     review_text: reviewInput.val(),
-                    stars: starInput.val()
+                    stars: $('input[name="rating"]').length
                 }),
               success: function (response) {
                 // empty the errors
