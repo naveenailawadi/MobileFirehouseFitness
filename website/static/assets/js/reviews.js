@@ -40,6 +40,9 @@ function addReviews() {
   // get the review template
   var reviewTemplate = $('#reviewTemplate').html();
 
+  // create variable for the date
+  var date = new Date();
+
   // get the correct number of reviews from the API
   $.ajax({
     type: 'POST',
@@ -59,7 +62,8 @@ function addReviews() {
         newReviews = response['reviews'];
         for (var i in newReviews) {
           review = newReviews[i];
-          review['date'] = 'date';
+          date = new Date(Number(review.creation_date) * 1000);
+          review['date'] = date.getMonth() + '/' + date.getDate() + '/' + date.getFullYear();
           reviewElement = $(Mustache.render(reviewTemplate, review));
 
 
@@ -132,7 +136,7 @@ $('#reviewForm').submit(function (e) {
                 {
                     name: nameInput.val(),
                     review_text: reviewInput.val(),
-                    stars: $('input[name="rating"]').length
+                    stars: $('label.checked').length
                 }),
               success: function (response) {
                 // empty the errors
@@ -154,12 +158,31 @@ $('#reviewForm').submit(function (e) {
         });
     }
 });
+
+
 function rate5() {
   const star5 = document.querySelectorAll('#starInput label[for="star5"]')[0];
   toggleRating(star5)
 }
+
+
+// function to reload reviews on changes
+$('#sortingDropdown').change(function (e) {
+  e.preventDefault();
+  addReviews();
+});
+
+// function to reload reviews on changes
+$('#limitDropdown').change(function (e) {
+  e.preventDefault();
+  addReviews();
+});
+
+
 // perform some functions on document load
 $(document).ready(function () {
   addReviews();
   rate5();
 });
+
+
