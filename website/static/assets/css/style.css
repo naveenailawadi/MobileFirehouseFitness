@@ -443,7 +443,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 24px;
 }
 
-#hero .play-btn {
+.play-btn {
   width: 94px;
   height: 94px;
   margin: 0 auto;
@@ -454,7 +454,7 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
 }
 
-#hero .play-btn::after {
+.play-btn::after {
   content: '';
   position: absolute;
   left: 50%;
@@ -469,7 +469,7 @@ h1, h2, h3, h4, h5, h6 {
   transition: all 400ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 
-#hero .play-btn::before {
+.play-btn::before {
   content: '';
   position: absolute;
   width: 120px;
@@ -492,12 +492,12 @@ h1, h2, h3, h4, h5, h6 {
   background: rgba(198, 16, 0, 0);
 }
 
-#hero .play-btn:hover::after {
+.play-btn:hover::after {
   border-left: 15px solid #009961;
   transform: scale(20);
 }
 
-#hero .play-btn:hover::before {
+.play-btn:hover::before {
   content: '';
   position: absolute;
   left: 50%;
