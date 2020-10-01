@@ -13,3 +13,9 @@ def home():
 @app.route('/covid')
 def covid():
     return render_template('covid.html', title='COVID-19')
+
+
+# add a gallery page
+@app.route('/gallery')
+def gallery():
+    return render_template('gallery.html', title='Gallery')

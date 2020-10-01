@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<section id="portfolio" class="portfolio">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Training Gallery</h2>
+      <p>
+        I take pride in providing my trainees with a custom tailored workout experience.
+        Check out what Mobile Firehouse Fitness is all about!
+      </p>
+    </div>
+
+    <div class="row portfolio-container">
+
+      <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+        <img src="{{url_for('static', filename='assets/img/gallery/bands.jpg')}}" class="img-fluid" alt="">
+        <div class="portfolio-info">
+          <h4>App 1</h4>
+          <p>App</p>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+        <img src="{{url_for('static', filename='assets/img/gallery/barTricep.jpg')}}" class="img-fluid" alt="">
+        <div class="portfolio-info">
+          <h4>Web 3</h4>
+          <p>Web</p>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+        <img src="{{url_for('static', filename='assets/img/gallery/crunch.jpg')}}" class="img-fluid" alt="">
+        <div class="portfolio-info">
+          <h4>App 2</h4>
+          <p>App</p>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+        <img src="{{url_for('static', filename='assets/img/gallery/jumpingJacks.jpg')}}" class="img-fluid" alt="">
+        <div class="portfolio-info">
+          <h4>Card 2</h4>
+          <p>Card</p>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+        <img src="{{url_for('static', filename='assets/img/gallery/jumpRope.jpg')}}" class="img-fluid" alt="">
+        <div class="portfolio-info">
+          <h4>Web 2</h4>
+          <p>Web</p>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+        <img src="{{url_for('static', filename='assets/img/gallery/sanitize.jpg')}}" class="img-fluid" alt="">
+        <div class="portfolio-info">
+          <h4>App 3</h4>
+          <p>App</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section><!-- End Portfolio Section -->
+
+{% endblock content %}
