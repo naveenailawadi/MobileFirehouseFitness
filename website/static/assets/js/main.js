@@ -143,6 +143,7 @@
     time: 1000
   });
 
+
   // Porfolio isotope and filter
   $(window).on('load', function() {
     var portfolioIsotope = $('.portfolio-container').isotope({
