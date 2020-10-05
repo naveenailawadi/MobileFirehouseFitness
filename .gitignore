@@ -6,7 +6,7 @@ secrets.py
 
 # dotfiles and binaries
 .DS_Store
-__pycache__/
+*.pyc
 
 # virtual environments
 venv/
